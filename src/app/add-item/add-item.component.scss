@@ -1,0 +1,66 @@
+input,
+button {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 0px 10px;
+    font-size: 16px;
+    outline: none;
+
+    &:focus {
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+            color: transparent;
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+            color: transparent;
+        }
+
+        &:-ms-input-placeholder {  
+            color: transparent;
+        }
+    }
+
+
+}
+
+button {
+    background-color: seagreen;
+    color: white;
+
+    &:hover {
+        background-color: lightseagreen;
+    }
+
+    &:active {
+        background-color: green;
+    }
+
+    &:disabled {
+        background-color: #666;
+        color: #AAA;
+    }
+}
+
+.error {
+
+    color: darkred;
+    font-size: 16px;
+    background-color: rgba(255, 0, 0, .25);
+    border: 1px solid darkred;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    width: 400px;
+    border-radius: 5px;
+
+    display: none;
+
+}
+
+.show-error {
+    display: block;
+}

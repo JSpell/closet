@@ -1,0 +1,31 @@
+<p *ngIf="!itemsLoaded">Loading data!</p>
+<div *ngIf="itemsLoaded">
+  <div class="viewing-list">You are viewing the
+    <select (change)="getItems($event.target.value)">
+      <option value="items">Items</option>
+      <option value="user-data">User Data</option>
+    </select>
+    list.
+  </div>
+  <app-add-item [currentKeyValue]="numberOfItems"></app-add-item>
+  <input type="checkbox" id="displayKeyControl" class="display-key-control">
+  <div class="item-info">
+    <span>You have a total of {{numberOfItems}} items.</span>
+    <label [class.hide]="numberOfItems < 1" for="displayKeyControl" class="display-key-control_text">Item Keys</label>
+  </div>
+  <ul class="item-list">
+    <li *ngFor="let item of items | async" class="item" [class.user-data]="!item.$value">
+      <template [ngIf]="item.$value">
+        <div class="item-value">{{item.$value}}</div>
+        <div class="item-key">{{item.$key}}</div>
+      </template>
+      <template [ngIf]="!item.$value">
+        <div class="item-key">Item Key: {{item.$key}}</div>
+        <div class="item-value">Name: {{item.name}}</div>
+        <div class="item-value">Age: {{item.age}}</div>
+        <div class="item-value">Quote: {{item.quote}}</div>
+      </template>
+      <span (click)="removeItem(item.$key)" class="remove-item">Remove this item</span>
+    </li>
+  </ul>
+</div>

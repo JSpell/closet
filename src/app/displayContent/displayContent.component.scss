@@ -1,0 +1,65 @@
+.viewing-list {
+    margin: 10px 0;
+}
+
+.item-info {
+    margin: 10px 0;
+}
+
+.item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-key,
+.item-value {
+    display: inline-block;
+    border: 1px solid #999;
+    margin: 5px; 
+    padding: 5px;
+}
+
+.user-data {
+    
+    border: 1px solid #999;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+    .item-value {
+        display: block;
+        border: 0;
+        margin: 5px 0;
+        padding: 0;
+    }
+}
+
+.display-key-control_text,
+.remove-item {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.item-key,
+.display-key-control,
+.hide {
+    display: none;
+}
+
+.display-key-control{
+    &_text:before {
+        content: "Show ";
+    }
+
+    &:checked {
+        ~ .item-list .item-key {
+            display: inline-block;
+        }
+
+        ~ .item-info .display-key-control_text:before {
+            content: "Hide ";
+        }
+    }
+}
+
