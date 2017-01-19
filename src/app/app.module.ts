@@ -13,10 +13,11 @@ import { SimpleItemComponent } from './simple-item/simple-item.component';
 
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyA9lIOrC2W7wLPG3xOWNjRKD2ilbz9MDY0",
-    authDomain: "ux-angular.firebaseapp.com",
-    databaseURL: "https://ux-angular.firebaseio.com",
-    storageBucket: "ux-angular.appspot.com",
+    apiKey: "AIzaSyDvs3AL0ywxAzXzcp_18C4A_MzDwWFLyyM",
+    authDomain: "closet-57a32.firebaseapp.com",
+    databaseURL: "https://closet-57a32.firebaseio.com",
+    storageBucket: "closet-57a32.appspot.com",
+    messagingSenderId: "707644105922"
 };
 
 
