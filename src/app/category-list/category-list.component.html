@@ -1,0 +1,11 @@
+<ul class="category-list">
+    <li *ngFor="let category of categories | async">
+      <input type="checkbox" id="{{category.$key}}" class="display-cat-control"/>
+      <label [attr.for]="category.$key" class="display-cat-control__text">{{category.$key}}</label>
+      <ul class="subcategory">
+        <li *ngFor="let subcat of category">
+          {{subcat}}
+        </li>
+      </ul>
+    </li>
+  </ul>

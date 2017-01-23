@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subcategory {
+    display: none;
+}
+
+.display-cat-control{
+    display: none;
+
+    &__text {
+        &:before {
+            content: "+";
+            padding: 5px;
+        }
+
+        &:hover {
+            color: blue;
+        }
+    }
+
+    &:checked {
+        ~ .subcategory {
+            display: block;
+        }
+
+        ~ .display-cat-control__text:before {
+            content: "-";
+            padding: 7px;
+        }
+    }
+}
