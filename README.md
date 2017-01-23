@@ -1,6 +1,6 @@
 # Closet
 
-Idea from [here](https://www.reddit.com/r/femalefashionadvice/comments/5ojqbo/outfit_calculator_get_the_most_out_of_mixing_and/)
+Idea from [here](https://www.reddit.com/r/femalefashionadvice/comments/5ojqbo/outfit_calculator_get_the_most_out_of_mixing_and/) & [here](https://www.reddit.com/r/femalefashionadvice/comments/5oxwkh/wardrobe_organization_overkill_via_relational/)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3, and uses [AngularFire2](https://github.com/angular/angularfire2).
 
