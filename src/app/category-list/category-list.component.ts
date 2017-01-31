@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../database.service';
+// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'category-list',
@@ -8,16 +9,43 @@ import { FirebaseService } from '../database.service';
 })
 export class CategoryListComponent implements OnInit {
 
-  categories: any;
+  categoriesObs: any;
+  loaded: boolean = false;
+  categorySelection: any;
+  categoriesArray: any;
+  type: any;
+  typeSelection: any;
+
+  mappedResult: any;
 
   constructor(private fbs: FirebaseService) {
-    this.fbs.connectToNode("Category");
-    this.categories = this.fbs.itemsList;
+    this.fbs.connectToNode("category");
+    this.categoriesObs = this.fbs.itemsList;
 
-    this.categories.subscribe(result => {
+    this.categoriesObs.subscribe(result => {
       console.log(result);
+      this.loaded = true;
     });
   }
+
+  selectedItem(selection) {
+    this.categorySelection = selection;
+    this.categoriesObs.subscribe(result => {
+      result.map(sub => {
+      if(sub.$key == selection)
+        this.type = sub.filter(x => {
+            return x.charAt(0) !== "$";
+        });
+      });
+    });
+    this.typeSelection = undefined;
+  }
+
+  selectedType(selection) {
+    this.typeSelection = selection;
+  }
+
+
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-<ul class="category-list">
+<!--<ul class="category-list">
     <li *ngFor="let category of categories | async">
       <input type="checkbox" id="{{category.$key}}" class="display-cat-control"/>
       <label [attr.for]="category.$key" class="display-cat-control__text">{{category.$key}}</label>
@@ -8,4 +8,18 @@
         </li>
       </ul>
     </li>
-  </ul>
+  </ul>-->
+
+  <select name="" id="" *ngIf="loaded" (change)="selectedItem($event.target.value)">
+    <option value="null">Select a category</option>
+    <option *ngFor="let category of categoriesObs | async" value="{{category.$key}}">{{category.$key}}</option>
+  </select>
+  <br /><br />
+  <select name="" id="" *ngIf="loaded && categorySelection" (change)="selectedType($event.target.value)">
+    <option value="null">Select a Type</option>
+    <option *ngFor="let subcat of type" value="{{subcat}}">{{subcat}}</option>
+  </select>
+
+  <span *ngIf="categorySelection && typeSelection">You have selected {{typeSelection}} from {{categorySelection}}.</span>
+
+

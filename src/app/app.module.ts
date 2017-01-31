@@ -11,6 +11,7 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { FirebaseService } from './database.service';
 import { SimpleItemComponent } from './simple-item/simple-item.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { PiecesListComponent } from './pieces-list/pieces-list.component';
 
 
 export const firebaseConfig = {
@@ -29,6 +30,7 @@ export const firebaseConfig = {
     AddItemComponent,
     SimpleItemComponent,
     CategoryListComponent,
+    PiecesListComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,14 @@ export class FirebaseService {
     this.itemsObject = this.af.database.object('/' + node);
   }
 
+  orderListByChild (node, child) {
+    this.itemsList = this.af.database.list('/' + node, {
+      query: {
+        orderByChild: child
+      }
+    });
+  }
+
   addListItem(entry) {
     if(entry != undefined && entry.trim() != "") {
       this.itemsList.push(entry.trim());
